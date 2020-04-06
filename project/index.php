@@ -1,7 +1,4 @@
 <?php
-    //Session Management
-    session_start();
-    define("SESSION_ID", session_id());
 
     //Define constants
     //Navigation texts
@@ -12,8 +9,12 @@
     //Navigation links
     define("NAV_URL_TITLE", "index.php");
     define("NAV_URL_SURVEY", "index.php?view=survey");
-    define("NAV_URL_USER_MANAGEMENT", "index.php?view=");
+    define("NAV_URL_USER_MANAGEMENT", "index.php?view=user_mgm");
     define("NAV_URL_RESULTS", "index.php?view=results");
+
+    //Session Management
+    session_start();
+    define("SESSION_ID", session_id());
 
     //Establish database connection
     require("logic/db.req.php");
@@ -33,7 +34,7 @@
         <meta name="keywords" content="Semantic-UI, Theme, Design, Template"/>
         <meta name="author" content="PPType"/>
         <meta name="theme-color" content="#ffffff"/>
-        <title>DHBW - Survey Site</title>
+        <title><?php echo NAV_LBL_TITLE?></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/base.css" type="text/css"/>
     </head>
@@ -43,7 +44,7 @@
         <div class="ui borderless fluid huge inverted menu">
             <div class="ui container">
                 <a class="header item" href="<?php echo NAV_URL_TITLE ?>"><?php echo NAV_LBL_TITLE ?></a>
-                <a class="active item" href="<?php echo NAV_URL_SURVEY ?>"><?php echo NAV_LBL_SURVEY ?></a>
+                <a class="item" href="<?php echo NAV_URL_SURVEY ?>"><?php echo NAV_LBL_SURVEY ?></a>
                 <a class="item" href="<?php echo NAV_URL_USER_MANAGEMENT ?>"><?php echo NAV_LBL_USER_MANAGEMENT ?></a>
                 <a class="item" href="<?php echo NAV_URL_RESULTS ?>"><?php echo NAV_LBL_RESULTS ?></a>
             </div>
@@ -60,7 +61,7 @@
                 </div>
             </div>
             <div class="ui vertical borderless fluid inverted menu">
-                <a class="active item" href="<?php echo NAV_URL_SURVEY ?>"><?php echo NAV_LBL_SURVEY ?></a>
+                <a class="item" href="<?php echo NAV_URL_SURVEY ?>"><?php echo NAV_LBL_SURVEY ?></a>
                 <a class="item" href="<?php echo NAV_URL_USER_MANAGEMENT ?>"><?php echo NAV_LBL_USER_MANAGEMENT ?></a>
                 <a class="item" href="<?php echo NAV_URL_RESULTS ?>"><?php echo NAV_LBL_RESULTS ?></a>
             </div>
@@ -68,6 +69,7 @@
     </div>
     <div class="ui center container">
         <?php
+            //Load View from GET
             require (loadViews());
         ?>
     </div>
