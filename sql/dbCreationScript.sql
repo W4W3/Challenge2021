@@ -64,9 +64,9 @@ CREATE TABLE `survey_site`.`survey_user_group`
 DROP TABLE IF EXISTS `survey_site`.`survey_user`;
 CREATE TABLE IF NOT EXISTS `survey_site`.`survey_user`
 (
-    `matricule_number` VARCHAR(7) PRIMARY KEY,
-    `username`         VARCHAR(100) NOT NULL,
-    `course_short`     VARCHAR(6),
+    `matricule_number` CHAR(7) PRIMARY KEY,
+    `username`         VARCHAR(50) NOT NULL,
+    `course_short`     VARCHAR(8),
     CONSTRAINT `cstr_survey_user_survey_user_group`
         FOREIGN KEY (`course_short`)
             REFERENCES `survey_site`.`survey_user_group` (`course_short`)
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `survey_site`.`assigned_status`;
 CREATE TABLE IF NOT EXISTS `survey_site`.`assigned_status`
 (
     `title_short`      VARCHAR(10),
-    `matricule_number` VARCHAR(7),
+    `matricule_number` CHAR(7),
     PRIMARY KEY (`title_short`, `matricule_number`),
     CONSTRAINT `cstr_assigned_status_survey`
         FOREIGN KEY (`title_short`)
@@ -123,8 +123,8 @@ DROP TABLE IF EXISTS `survey_site`.`assigned_comment`;
 CREATE TABLE IF NOT EXISTS `survey_site`.`assigned_comment`
 (
     `title_short`      VARCHAR(10),
-    `matricule_number` VARCHAR(7),
-    `comment`          VARCHAR(200) NOT NULL,
+    `matricule_number` CHAR(7),
+    `comment`          VARCHAR(500) NOT NULL,
     PRIMARY KEY (`title_short`, `matricule_number`),
     CONSTRAINT `cstr_assigned_comment_survey`
         FOREIGN KEY (`title_short`)
@@ -145,7 +145,7 @@ DROP TABLE IF EXISTS `survey_site`.`answer`;
 CREATE TABLE IF NOT EXISTS `survey_site`.`answer`
 (
     `id`               INT,
-    `matricule_number` VARCHAR(7),
+    `matricule_number` CHAR(7),
     `value`            INT NOT NULL,
     PRIMARY KEY (`id`, `matricule_number`),
     CONSTRAINT `cstr_answer_question`
