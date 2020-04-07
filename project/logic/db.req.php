@@ -4,7 +4,7 @@
     define("MYSQL_HOST", "127.0.0.1");
     define("MYSQL_USER", "root");
     define("MYSQL_PW", "");
-    define("MYSQL_DB", "survey");
+    define("MYSQL_DB", "survey_site");
 
     function getDbConnection(){
         global $link;
