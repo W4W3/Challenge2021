@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * view.req.php
+     *
+     * Stores logic for view System
+     *
+     * @author     Robin Herder
+     */
+
     define("VIEWS_PATH", "views/");
 
     $nav_survey = false;

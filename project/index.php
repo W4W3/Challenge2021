@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * index.php
+     *
+     * Entry Point for the Website and loads (requires) the php logic files
+     *
+     * @author     Robin Herder
+     */
+
     //Define constants
     //Navigation texts
     define("NAV_LBL_TITLE", "DHBW - Survey Site");
