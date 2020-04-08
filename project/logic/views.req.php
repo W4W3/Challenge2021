@@ -14,6 +14,11 @@
     $nav_user_mgm = false;
     $nav_results = false;
 
+    /**
+     * determines the view to show from _GET or 404 view
+     * @author Robin Herder
+     * @return mixed|string|string[]|null path to view
+     */
     function loadViews() {
         $view = "survey";
         if(!empty($_GET['view'])) {
