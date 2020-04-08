@@ -23,6 +23,9 @@
     //Load current view
     require("logic/views.req.php");
 
+    //Access to central function
+    require("logic/centralFunction.req.php");
+
 ?>
 <!DOCTYPE html>
 <html>
