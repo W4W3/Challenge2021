@@ -4,20 +4,18 @@ import de.replycodingchallenge.buildtheskyhighway.data.Grid;
 import de.replycodingchallenge.buildtheskyhighway.utils.FileIn;
 import de.replycodingchallenge.buildtheskyhighway.utils.FileOut;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DataManager {
 
     private final Grid grid;
-    HashMap<Integer, Point> placedAntennas = new HashMap<>();
 
     public DataManager(String input, String output) {
         ArrayList<String> data = FileIn.getData(input);
         this.grid = getGrid(data);
         Solver solver = new Solver();
-        FileOut.writeFile(solver.solve(grid),output);
+        FileOut.writeFile(solver.solve(grid, input),output);
+        System.out.println(output + ": File has been written!");
     }
 
     public Grid getGrid(ArrayList<String> data) {

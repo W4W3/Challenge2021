@@ -12,7 +12,7 @@ public class Solver {
     private Grid grid;
     private Calculator calculator = new Calculator();
 
-    public Antenna[] solve(Grid grid) {
+    public Antenna[] solve(Grid grid, String url) {
         this.grid = grid;
         char[][] gridFields;
         Antenna[] bestAntennas = null;
@@ -38,6 +38,7 @@ public class Solver {
                 bestAntennas = antennas;
                 bestScore = currentScore;
             }
+            System.out.println(url + ": " + bestScore);
         }
         return bestAntennas;
     }
