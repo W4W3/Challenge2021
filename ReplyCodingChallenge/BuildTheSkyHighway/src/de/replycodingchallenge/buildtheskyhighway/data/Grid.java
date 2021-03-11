@@ -1,11 +1,11 @@
 package de.replycodingchallenge.buildtheskyhighway.data;
 
 public class Grid {
-    public final int width;
-    public final int height;
-    public final int reward;
-    public final int presentBuilding;
-    public final int availableAntennas;
+    private final int width;
+    private final int height;
+    private final int reward;
+    private final int presentBuilding;
+    private final int availableAntennas;
 
     public Grid (int width, int height, int reward, int presentBuilding, int availableAntennas) {
         this.width = width;
