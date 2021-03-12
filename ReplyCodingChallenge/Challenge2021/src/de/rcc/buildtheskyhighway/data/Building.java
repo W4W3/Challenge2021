@@ -1,20 +1,16 @@
-package de.replycodingchallenge.buildtheskyhighway.data;
+package de.rcc.buildtheskyhighway.data;
 
 import java.awt.*;
 
 public class Building {
-    private final Point coordination;
     private final int latencyWeight;
     private final int connectionSpeedWeight;
+    private final Point coordination;
 
-    public Building(Point coordination, int latenyWeight, int connectionSpeedWeight) {
-        this.coordination = coordination;
-        this.latencyWeight = latenyWeight;
+    public Building(int latencyWeight, int connectionSpeedWeight, Point coordination) {
+        this.latencyWeight = latencyWeight;
         this.connectionSpeedWeight = connectionSpeedWeight;
-    }
-
-    public Point getCoordination() {
-        return coordination;
+        this.coordination = coordination;
     }
 
     public int getLatencyWeight() {
@@ -23,5 +19,9 @@ public class Building {
 
     public int getConnectionSpeedWeight() {
         return connectionSpeedWeight;
+    }
+
+    public Point getCoordination() {
+        return coordination;
     }
 }

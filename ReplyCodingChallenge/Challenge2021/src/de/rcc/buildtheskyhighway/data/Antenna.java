@@ -1,4 +1,4 @@
-package de.replycodingchallenge.buildtheskyhighway.data;
+package de.rcc.buildtheskyhighway.data;
 
 import java.awt.*;
 
@@ -8,14 +8,11 @@ public class Antenna {
     private final int connectionSpeed;
     private Point coordination;
 
-    public Antenna (int id, int range, int connectionSpeed) {
+    public Antenna(int id, int range, int connectionSpeed) {
         this.id = id;
         this.range = range;
         this.connectionSpeed = connectionSpeed;
-    }
-
-    public void setCoordination(Point coordination) {
-        this.coordination = coordination;
+        coordination = new Point(-1,-1);
     }
 
     public int getId() {
@@ -32,5 +29,9 @@ public class Antenna {
 
     public Point getCoordination() {
         return coordination;
+    }
+
+    public void setCoordination(Point coordination) {
+        this.coordination = coordination;
     }
 }
